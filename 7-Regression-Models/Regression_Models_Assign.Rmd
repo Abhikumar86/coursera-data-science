@@ -1,0 +1,82 @@
+---
+title: "Regression Models Course Project"
+author: "Abhishek Kumar"
+date: "22 September 2020"
+output:
+  word_document: default
+  html_document: default
+---
+
+## Data Processing
+
+In `mtcars` dataset, the variable `mpg` represents the Miles per (US) gallon and 
+the `am` variable represents the tranmission where 0 represent the *automatic* and 
+1 represent the *manual* transmission. 
+
+```{r results='hide'}
+library(datasets); library(ggplot2)
+data("mtcars"); dat <- mtcars; str(mtcars)
+dat$cyl <- as.factor(dat$cyl); dat$vs <- as.factor(dat$vs)
+dat$am <- as.factor(dat$am); dat$gear <- as.factor(dat$gear)
+dat$carb <- as.factor(dat$carb)
+```
+
+## Exploratory Analysis
+
+```{r}
+t.test(mpg~am, dat)$p.value
+```
+
+The t-test suggests that data provide sufficient evidence in favour of alternative
+hypothesis i.e. there are significant differences as p-value (0.001) is less than 0.05.
+
+
+## Regression Analysis
+
+* **Model Selection:** The `step()` function in R uses the AIC for selection of best models 
+i.e. with higher AIC values.Here, I will use a backward model 
+selection strategy because it will prevent loss of any variable as we will start 
+from a model which include all the predictors.
+
+```{r}
+mdl.full <- lm(mpg~., data = dat)
+mdl.step <- step(mdl.full, direction = "backward", trace = FALSE)
+summary(mdl.step)$coef
+```
+
+* **Coeffiecient Interpretation:** *This `mdl.step` model suggests that If all other 
+variables are held constant, the `mpg` is expected to be 1.809 times higher for 
+manual tranmission (`am1`) than the automatic transmission (`am0`) on average.*
+
+* **Quantification of Uncertainity:**  
+
+```{r}
+confint(mdl.step, parm = "am1", level = 0.95)
+```
+
+Thus, our step model (`mdl.step`) suuggests that If all other variables are held 
+constant,the `mpg` is expected to be 1.061 times lower to 4.679 times higher for 
+manual tranmission (`am1`) than the automatic transmission (`am0`) on average at
+95% significance level. since this is a relatively broader interval, the uncertainity 
+in prediction can be moderate to high.
+
+* **Model Diagnostics:** 
+
+```{r fig.height=4, fig.width=8}
+par(mfrow = c(1, 2)); plot(mdl.step, which = 1:2)
+```
+
+The above plots illustrates the model assumptions. The residuals vs Fitted plot
+suggests moderate linear association as 3 points can be considered as ouliers. The
+assumption of normaility is also fairly met since some points at the upper end are 
+way from the normal line.
+
+## Executive Summary
+
+The miles per gallon (mpg) is an important parameter of fuel economy. Our analysis 
+suggests that mpg is associated with number of cylinder (cyl), engine capacity 
+horse power (`hp`), weight (`wt`) and transmission type (`am`). Although the 
+transmission type is not a significant predictor of `mpg`, it has influence on
+`mpg`. Statistical evidence supports that manual tranmission is more likely to have 
+higher `mpg` on average, however, there is moderate to large uncertainity in the
+coefficients suggesting that predictions may not be accurate.
