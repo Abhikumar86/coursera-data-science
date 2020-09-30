@@ -1,0 +1,163 @@
+---
+title: "Statistical Inference Project Part 2"
+author: "Abhishek Kumar"
+date: "9 August 2020"
+output:
+  word_document: default
+  html_document: default
+---
+
+# Part 2: Basic Inferential Data Analysis
+
+## Overview
+
+Now in the second portion of the project, we're going to analyze the ToothGrowth 
+data in the R datasets package. This analysis includes some basic exploratory analysis
+specifically summary and hypothesis testing confidence intervals.
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(scales)
+```
+
+
+**1. Load the ToothGrowth data and perform some basic exploratory data analyses**
+
+```{r}
+data("ToothGrowth")
+str(ToothGrowth)
+ToothGrowth$dose <- as.factor(ToothGrowth$dose)
+```
+
+**About the data**
+
+This data comes from a study which analyzed the effect of supplement (Vitamin C) 
+on length of tooth in Guinea Pigs. This data has 60 observations and 3 variables 
+(len, supp and dose). Each of 10 guinea 
+pigs were given three Vitamin C dosage levels (0.5, 1, and 2 mg) with two delivery 
+methods (orange juice or ascorbic acid). So, the data contains 60 observations 
+of 3 variables.
+
+* len : Tooth length
+* supp : Supplement type (VC or OJ)
+* dose : Dose in milligrams
+
+## Exploratory Data Analysis
+
+**2. Provide a basic summary of the data.**
+
+```{r}
+supp_summ <- ToothGrowth %>% group_by(Factor = supp) %>% summarise(mean = mean(len), 
+                                                   sd = sd(len),
+                                                   median = median(len),
+                                                   minimum = min(len),
+                                                   maximum = max(len),
+                                                   IQR = IQR(len))
+
+dose_summ <- ToothGrowth %>% group_by(Factor = as.factor(dose)) %>% summarise(mean = mean(len), 
+                                                   sd = sd(len),
+                                                   median = median(len),
+                                                   minimum = min(len),
+                                                   maximum = max(len),
+                                                   IQR = IQR(len))
+
+rbind(supp_summ, dose_summ)
+```
+
+The basic summary indicates that the tooth length was ranged from 4.2 to 33.9 with a 
+mean of 18.81 and Median of 19.25. Among groups the data is shown in above table.
+
+
+**3. Use confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose.**
+
+i. Which supplementary method is more effective for tooth growth?
+
+$H_0: \mu_{OJ} = \mu_{VJ}; \quad H_A: \mu_{OJ} \ne \mu_{VJ}$
+
+```{r}
+OJ <- (ToothGrowth %>% filter(supp == "OJ"))$len
+VC <- (ToothGrowth %>% filter(supp == "VC"))$len
+
+t.test(OJ, VC, paired = FALSE, var.equal = FALSE, conf.level = 0.95)
+```
+
+```{r}
+ggplot(ToothGrowth, aes(x = supp, y = len, fill = supp)) + 
+      geom_boxplot(show.legend = FALSE) + 
+      scale_fill_brewer(palette = "Set3") +
+      theme_bw() + ylim(0,40) +
+      labs(x = "Supplement Type", y = "Tooth Length (mm)",
+           title = "Effect of Supplement type on Tooth Growth") +
+      geom_label(x = 1, y = 37.5, fill = "gray95", size = 5,
+                label = "paste(italic(t), \"= 1.915\", \", \" , italic(p), \"= 0.06\")", 
+                parse = TRUE) + 
+      geom_label(x = 2, y = 37.5, fill = "gray95", size = 5,
+                label = "paste(\"95% CI\", \"= -0.171 to 7.571\")", 
+                parse = TRUE)
+```
+
+So, the 95% confidence interval include zero suggesting that the null hypothesis
+($H_0$) is true at this confidence interval and therefore, the alternative 
+hypothesis ($H_A$) is rejected.
+
+ii. Which dose is more effective for tooth growth?
+
+Lets consider that the doses 0.5, 1, and 2 represents the levels as Low, Medium and
+high. 
+
+Hypotheses:
+
+$H_0: \mu_{Low} = \mu_{Medium} = \mu_{High}; \quad \\ 
+H_A: \mu_{Low} \ne \mu_{Medium} \ne \mu_{High}$
+
+```{r}
+Low <- (ToothGrowth %>% filter(dose == "0.5"))$len
+Medium <- (ToothGrowth %>% filter(dose == "1"))$len
+High <- (ToothGrowth %>% filter(dose == "2"))$len
+
+t.test(Low, Medium, paired = FALSE, var.equal = FALSE, conf.level = 0.95)
+t.test(Low, High, paired = FALSE, var.equal = FALSE, conf.level = 0.95)
+t.test(High, Medium, paired = FALSE, var.equal = FALSE, conf.level = 0.95)
+```
+
+Data | t | df | p-value | CI | x_mean | y_mean
+-----|---|----|---------|----|--------|-------
+Low vs Medium | -6.477 | 37.986 | <0.000 | -11.98 to -6.276| 10.60 | 19.73
+Low vs High | -11.799 | 36.883 | <0.000 | -18.16 to -12.834| 10.60 | 26.10
+High vs Medium | 4.901 | 37.101 | <0.000 | 3.734 to 8.996| 26.100 | 19.73
+
+So, the 95% confidence interval did not included zero suggesting that the null hypothesis
+($H_0$) is not true at this confidence interval and therefore, the alternative 
+hypothesis ($H_A$) is accepted. Also, all the comparisons indicate a highly significant 
+p-value showing the significant differences in the mean of the samples.
+
+```{r}
+ggplot(ToothGrowth, aes(x = as.factor(dose), y = len, fill = as.factor(dose))) + 
+      geom_boxplot(show.legend = FALSE, notch = TRUE, size = 0.75) + 
+      scale_fill_brewer(palette = "Set3") +
+      theme_bw() + ylim(0,40) +
+      labs(x = "Dose (mg)", y = "Tooth Length (mm)",
+           title = "Effect of Dose on Tooth Growth")
+```
+
+### 4. State your conclusions and the assumptions needed for your conclusions.
+
+#### Conclusions
+
+The present analysis conclude that the tooth growth is not affected by supplement 
+type (OJ or VC) at the 5% confidence intervals. However, the doses has the significant
+effects on the tooth growth, as the mean of doses was significantly differed among the 
+dose concentrations.
+
+#### Assumptions
+
+The analysis used the t-test for hypothesis testing. So it was assumed that:
+
+1. The population from which samples are drawn is normally distributed.
+
+2. The tests also assumed that variances are equally distributed or homogenous.
+
+3. The samples were randomly drawn and represents the population.
+
+4. The samples were independent of each other.
