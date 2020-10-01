@@ -1,0 +1,284 @@
+---
+title: 'Identifying the storm event type that causes highest human health and 
+economic damage in US'
+author: "Abhishek Kumar"
+date: "16 July 2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Exploratory Data Analysis with NOAA storm data
+================================================
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Synopsis
+
+Storms and other severe weather events can cause both public health and economic 
+problems for communities and municipalities. Many severe events can result in 
+fatalities, injuries, and property damage, and preventing such outcomes to the 
+extent possible is a key concern.
+
+# 2. Data
+This analysis involves an exploration of the U.S. National Oceanic and Atmospheric 
+Administration's (NOAA) storm database. This data is available in the form of a 
+comma-separated-value file compressed via the bzip2 algorithm to reduce its size. 
+This data can be downloaded from the following link:
+
+ * [Storm Data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2) [47Mb]
+
+The documentation on how some of the variables are constructed/defined for the 
+database is available from below links: 
+
+ * National Weather Service [Storm Data Documentation](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2Fpd01016005curr.pdf)
+
+ * National Climatic Data Center Storm Events [FAQ](https://d396qusza40orc.cloudfront.net/repdata%2Fpeer2_doc%2FNCDC%20Storm%20Events-FAQ%20Page.pdf)
+
+This database tracks characteristics of major storms and weather events in the 
+United States, including when and where they occur, as well as estimates of any 
+fatalities, injuries, and property damage. The events in the database start in the 
+year 1950 and end in November 2011. In the earlier years of the database there 
+are generally fewer events recorded, most likely due to a lack of good records. 
+More recent years should be considered more complete.
+
+# 3. Data Processing
+
+Firstly, load sone of the required packages using the `library()` function
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+```
+
+
+## 3.1 Download the data
+Firstly, the data was downloaded using the following commands:
+
+```{r cache = TRUE}
+if(!file.exists("StormData.csv.bz2")) {
+      fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+      download.file(fileUrl, destfile = "./StormData.csv.bz2")
+      }
+```
+## 3.2 Loading the data
+Since, this data is available in the form of a comma-separated-value file 
+compressed via the bzip2 algorithm to reduce its size. The function `read.csv()` 
+can read the `.csv.bz2` file 
+```{r}
+storm.data <- read.csv(file = "StormData.csv.bz2", header = TRUE, sep = ",")
+head(storm.data)
+```
+
+After loading the data, the structure of data can be viewed using the `str()` function
+
+```{r}
+str(storm.data)
+```
+
+So, this data is a dataframe with 902297 observations (rows) and 37 variables (columns).
+Also, the date and time are represented as characters, which need to be converted into
+Date and Time format
+
+## 3.3 Preprocessiog
+
+Lets convert the date and time
+
+```{r}
+storm.data$BGN_DATE <- as.Date(storm.data$BGN_DATE, "%m/%d/%Y")
+str(storm.data)
+```
+
+Now, date has been converted. Let's look at our questions
+
+ * *Across the United States, which types of events (as indicated in the `EVTYPE` 
+variable) are most harmful with respect to population health?*
+
+ * *Across the United States, which types of events have the greatest economic 
+ consequences?*
+
+So we need to focus on health and economic damage, therefore we do not need to 
+process all the data, we can subset the data by selecting desirable columns.
+
+ * Health: FATALITIES and INJURIES
+ * Economic: PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP
+
+After selecting the desirable variables, we may filter the observations, which 
+have some impacts i.e. values greater than zero. This will results in reduced data 
+for analysis.
+
+```{r}
+storm.damage <- storm.data %>% 
+      select(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP)
+```
+
+Considering the given data, human health can be assessed by two variables i.e. 
+FATALITIES and INJURIES. So for achieving this, 
+ * we need to first filter the data with storm events which had some impact on human health
+ * Then, the data is grouped by EVent types
+ * It is followed by summarising data to sum the FATALITIES and INJURIES with EVTYPE. 
+ * The data is then arranged in decreasing values of Fatalities and Injuries.
+ * This can be achieved by using either the `aggregate()` function or using the package `dplyr`.
+ Here, I am using the the package `dplyr`
+ * After this, the data was tranformed into a longer format to plot with different panels
+
+```{r}
+fat <- storm.damage %>% 
+      filter(FATALITIES > 0 | INJURIES > 0) %>%
+      group_by(EVTYPE) %>% 
+      summarise(Fatalities = sum(FATALITIES)) %>%
+      arrange(desc(Fatalities))
+inj <- storm.damage %>% 
+      filter(FATALITIES > 0 | INJURIES > 0) %>%
+      group_by(EVTYPE) %>% 
+      summarise(Injuries = sum(INJURIES)) %>%
+      arrange(desc(Injuries))
+health.Dam <- merge(fat[1:10,], inj[1:10,]) %>%
+      pivot_longer(-EVTYPE, names_to = "variables", values_to = "values")
+```
+
+Our Second questions was:
+
+ * *Across the United States, which types of events have the greatest economic 
+ consequences?*
+
+So, for economid damage, we have already selected variables and stored in storm.damage
+dataframe.There are two types of variables that impact the economic damage i.e.
+Crop damage and property damage. However, this data has some exponents which are defined in
+CROPDAMEXP and PROPDAMEXP, respectively.
+So first we have decode these exponents. Lets look at unique varibales in EXPs
+
+```{r}
+unique(storm.damage$CROPDMGEXP)
+unique(storm.damage$PROPDMGEXP)
+```
+
+Here, these symbols represent different exponents which need to be replaced in the data.
+      * 0 = 1
+      * 1 = 10
+      * 2 = 100
+      * 3 = 1,000
+      * 4 = 10,000
+      * 5 = 100,000
+      * 6 = 1,000,000
+      * 7 = 10,000,000
+      * 8 = 100,000,000
+      * 9 = 1,000,000,000
+      * H = 100
+      * h = 100
+      * K = 1,000
+      * k = 1,000
+      * M = 1,000,000
+      * m = 1,000,000
+      * B = 1,000,000,000
+      * + = 1
+      * "" = 1
+      * - = 1
+
+```{r}
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "")] <- 10^0
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "M")] <- 10^6
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "K")] <- 10^3
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "m")] <- 10^6
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "B")] <- 10^9
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "?")] <- 10^0
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "0")] <- 10^0
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "k")] <- 10^3
+storm.damage$CropFactor[(storm.damage$CROPDMGEXP == "2")] <- 10^2
+
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "K")] <- 10^3
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "M")] <- 10^6
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "")] <- 10^0
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "B")] <- 10^9
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "m")] <- 10^6
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "+")] <- 10^0
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "0")] <- 10^0
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "5")] <- 10^5
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "6")] <- 10^6
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "?")] <- 10^0
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "4")] <- 10^4
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "2")] <- 10^2
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "3")] <- 10^3
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "h")] <- 10^2
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "7")] <- 10^7
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "H")] <- 10^2
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "-")] <- 10^0
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "1")] <- 10^1
+storm.damage$PropFactor[(storm.damage$PROPDMGEXP == "8")] <- 10^8
+```
+
+So after replacing the factors, we can now calculate the economic damage
+ * we introduce a new variable called EconDam which is equal to total economic loss
+ due to crop and property damage by storms. For this, we need to multiply the 
+ damage by the transformed factors thus
+  * EconDam = (CROPDMG x CropFactor) + (PROPDMG x PropFactor)
+ 
+ * then we have first filtered values which had some impact on economy
+ * then grouped by Event type and finally
+ * summarised by sum and arranged in decreasing order
+
+```{r}
+Econ.Dam <- storm.damage %>% mutate(EconDam = (CROPDMG * CropFactor) + (PROPDMG * PropFactor)) %>%
+      filter(EconDam > 0) %>%
+      group_by(EVTYPE) %>% 
+      summarise(EconLoss = sum(EconDam)) %>%
+      arrange(desc(EconLoss))
+```
+So, now we may want to the economic value to be represented in million USD,
+as we can expect that the Storm events may have caused huge economic loss.
+
+```{r}
+Econ.Dam$EconLoss <- Econ.Dam$EconLoss/10^9
+```
+
+Now, the economic values are conerted into billions USD,
+So, this data is ready for our question.
+
+# 4. Results
+
+So, now we can plot Health Damage against the storm event type, to see the highest 
+impact on Human health.
+
+```{r}
+ggplot(data = health.Dam, aes(x = reorder(EVTYPE, -values), y = values, fill = EVTYPE)) + 
+      geom_bar(stat = "identity", width = 0.7, color = "black", show.legend = FALSE) + 
+      scale_fill_brewer(palette = "Set3")+
+      facet_wrap(~variables, scales = "free_x") +
+      labs(x = "Storm Event Types", y = "Total Number of affected Individuals") + 
+      ggtitle("Top Health Damage by Storm Events in US") + 
+      coord_flip() +
+      theme_bw()
+
+```
+
+This figures clearly shows that Tornados are most harmfuls storm events in US. In both
+type of Human health impact, Tornados have the most devastating effects on Human health
+
+So, now we can plot Economic Damage against the storm event type, to see the highest 
+impact on Economy.
+
+```{r}
+ggplot(data = Econ.Dam[1:10,], aes(x = reorder(EVTYPE, -EconLoss), y = EconLoss, fill = EVTYPE)) + 
+      geom_bar(stat = "identity", width = 0.7, color = "black", show.legend = FALSE) + 
+      scale_fill_brewer(palette = "Set3")+
+      labs(x = "Storm Event Types", y = "Total Economic Loss (Billion USD)") + 
+      ggtitle("Top Economic Damage by Storm Events in US") + 
+      coord_flip() +
+      theme_bw()
+
+```
+
+Thus, the above figure clearly show that Floods cause highest economic loss in US,
+which correspons to more than 150 Billion USD. This amount is almost double to the 
+economic loss caused by Hurricanes or Typhoons.
+
+# 5. Conclusion
+
+In conclusion, Our data analysis clealry depicted that Tornaodos causes highest damage
+to human health including fatalities and injuries whereas Floods cause highest economic loss
+in US. Therefore, the government or municipal should focus on preparing for severe weather 
+events and will need to prioritize resources for Tornados and Flood types of events. 
+
