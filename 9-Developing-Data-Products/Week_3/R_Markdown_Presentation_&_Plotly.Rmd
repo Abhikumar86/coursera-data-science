@@ -1,0 +1,81 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "Abhishek Kumar"
+date: "28 October 2020"
+output: 
+      ioslides_presentation:
+            logo: logo.png
+---
+
+## Data
+
+```{r data, results='hide', message=FALSE, warning=FALSE}
+library(plotly)
+mydf <- read.csv("Litter_Wt_Loss.csv")
+plot_ly(type="table", 
+        header = list(values = names(mydf),
+                      align = c("center", "center"), 
+                      line = list(width = 1, color = 'black'),
+                      fill = list(color = c("grey", "grey")),
+                      font = list(family = "Arial", size = 14, 
+                                  color = "white")
+                      ),
+        cells = list(values = unname(mydf), 
+                     align = c("center", "center"), 
+                     line = list(color = "black", width = 1), 
+                     font = list(family = "Arial", size = 12, 
+                                 color = c("black"))
+                     )
+        ) 
+
+```
+
+## Plotly Interactive Table
+
+```{r table, echo=FALSE}
+mydf <- read.csv("Litter_Wt_Loss.csv")
+plot_ly(type="table", 
+        header = list(values = names(mydf),
+                      align = c("center", "center"), 
+                      line = list(width = 1, color = 'black'),
+                      fill = list(color = c("grey", "grey")),
+                      font = list(family = "Arial", size = 14, 
+                                  color = "white")
+                      ),
+        cells = list(values = unname(mydf), 
+                     align = c("center", "center"), 
+                     line = list(color = "black", width = 1), 
+                     font = list(family = "Arial", size = 12, 
+                                 color = c("black"))
+                     )
+        ) 
+```
+
+
+## Preparing a plot
+
+```{r echo=TRUE, results='hide', warning=FALSE}
+fig <- plot_ly(data = mydf, x = ~Days, y = ~Wt_Loss, color = ~Invasion, 
+               frame = ~Days, text = ~Invasion, hoverinfo = "text", 
+               type = 'scatter', mode = 'markers', size = 120)
+
+fig <- fig %>% layout(xaxis = list(range = c(0, 400)
+                                   )
+                      )
+
+fig
+```
+
+## Plotly Interactive Plot
+
+```{r echo=FALSE, warning=FALSE}
+fig <- plot_ly(data = mydf, x = ~Days, y = ~Wt_Loss, color = ~Invasion, 
+               frame = ~Days, text = ~Invasion, hoverinfo = "text", 
+               type = 'scatter', mode = 'markers', size = 120)
+
+fig <- fig %>% layout(xaxis = list(range = c(0, 400)
+                                   )
+                      )
+
+fig
+```
