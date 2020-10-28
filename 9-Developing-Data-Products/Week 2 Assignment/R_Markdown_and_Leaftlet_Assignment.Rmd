@@ -1,0 +1,54 @@
+---
+title: "R Markdown and Leaflet Assignment"
+author: "Abhishek Kumar"
+date: "19 October 2020"
+output: html_document
+---
+
+# Objectives
+
+1. Create a web page using R Markdown that features a map created with Leaflet.
+2. Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+3. Your webpage must contain the date that you created the document, and it must 
+contain a map created with Leaflet. We would love to see you show off your 
+creativity!
+
+
+# Map
+
+```{r message=FALSE, eval=FALSE}
+library(leaflet)
+
+mylab <- paste(sep = "<br/>",
+  "<b><a href = 'https://botany.puchd.ac.in/'>Department of Botany</a></b>",
+  "Panjab University, Sector-14",
+  "Chandigarh 160014, India"
+)
+
+leaflet() %>% 
+      addTiles() %>% 
+      addAwesomeMarkers(lat = 30.7623, lng = 76.7678, popup = mylab) %>%
+      addProviderTiles(provider = "Stamen.Watercolor") %>%
+      addMiniMap()
+
+```
+
+# Date: 19 October 2020
+
+```{r message=FALSE, echo=FALSE}
+library(leaflet)
+
+mylab <- paste(sep = "<br/>",
+  "<b><a href = 'https://botany.puchd.ac.in/'>Department of Botany</a></b>",
+  "Panjab University, Sector-14",
+  "Chandigarh 160014, India"
+)
+
+leaflet() %>% 
+      addTiles() %>% 
+      addAwesomeMarkers(lat = 30.7623, lng = 76.7678, popup = mylab) %>%
+      addProviderTiles(provider = "Stamen.Watercolor") %>%
+      addMiniMap()
+
+```
+
