@@ -76,6 +76,5 @@ fig <- plot_ly(data = mydf, x = ~Days, y = ~Wt_Loss, color = ~Invasion,
 fig <- fig %>% layout(xaxis = list(range = c(0, 400)
                                    )
                       )
-
 fig
 ```
