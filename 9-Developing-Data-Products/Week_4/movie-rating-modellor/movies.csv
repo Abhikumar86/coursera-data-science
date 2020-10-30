@@ -1,0 +1,652 @@
+runtime,imdb_rating,imdb_num_votes,critics_rating,critics_score,audience_rating,audience_score
+80,5.5,899,Rotten,45,Upright,73
+101,7.3,12285,Certified Fresh,96,Upright,81
+84,7.6,22381,Certified Fresh,91,Upright,91
+139,7.2,35096,Certified Fresh,80,Upright,76
+90,5.1,2386,Rotten,33,Spilled,27
+78,7.8,333,Fresh,91,Upright,86
+142,7.2,5016,Rotten,57,Upright,76
+93,5.5,2272,Rotten,17,Spilled,47
+88,7.5,880,Fresh,90,Upright,89
+119,6.6,12496,Certified Fresh,83,Upright,66
+127,6.8,71979,Certified Fresh,89,Upright,75
+108,6,9669,Fresh,67,Spilled,46
+110,7.6,201779,Certified Fresh,80,Upright,89
+100,5.9,25808,Rotten,25,Spilled,53
+111,3.6,5544,Rotten,15,Spilled,36
+96,7,240033,Certified Fresh,78,Upright,64
+140,7.2,66489,Rotten,54,Upright,80
+106,6.9,6336,Fresh,61,Upright,92
+91,4.4,37769,Rotten,19,Spilled,24
+90,3.6,21268,Rotten,29,Spilled,19
+124,7,56201,Rotten,40,Upright,73
+82,7.6,3459,Fresh,92,Upright,86
+107,6.2,16717,Fresh,66,Spilled,42
+116,6.2,9357,Rotten,47,Upright,71
+87,7.6,4541,Certified Fresh,79,Upright,77
+97,5.3,1816,Rotten,40,Spilled,41
+178,7.1,163490,Rotten,51,Upright,81
+84,5.6,19285,Certified Fresh,77,Spilled,43
+115,6.4,3688,Fresh,91,Upright,61
+100,7.9,3488,Fresh,92,Upright,91
+85,7.1,82851,Certified Fresh,91,Upright,71
+87,7,56128,Fresh,68,Upright,77
+85,7.7,33101,Fresh,69,Upright,85
+124,7.1,259822,Fresh,69,Upright,70
+112,6.6,4908,Rotten,40,Spilled,57
+108,6.5,290356,Rotten,52,Spilled,55
+135,7,47297,Certified Fresh,76,Upright,70
+115,6.1,2145,Rotten,13,Spilled,51
+137,8.4,466400,Certified Fresh,98,Upright,94
+99,7.4,69338,Certified Fresh,81,Upright,81
+106,6.6,6228,Fresh,69,Upright,64
+130,7.8,75468,Fresh,90,Upright,88
+98,6.5,48519,Rotten,21,Upright,64
+94,5.4,13523,Rotten,57,Spilled,40
+154,7.8,58668,Fresh,88,Upright,94
+113,6.5,9654,Rotten,54,Upright,62
+115,6.7,22079,Fresh,67,Upright,64
+135,6.7,5258,Rotten,50,Spilled,49
+106,2.7,761,Rotten,17,Spilled,17
+125,6.2,33839,Rotten,35,Spilled,40
+65,7.3,183,Fresh,73,Upright,88
+123,7.7,225130,Rotten,27,Upright,75
+119,6.5,62241,Rotten,52,Spilled,56
+120,6.6,19714,Rotten,34,Spilled,52
+162,7.4,137126,Certified Fresh,84,Upright,83
+140,6.8,10468,Rotten,44,Upright,72
+115,6.5,37770,Rotten,46,Spilled,59
+102,5.5,1628,Rotten,56,Spilled,38
+79,5.5,5587,Rotten,6,Spilled,35
+108,6.4,6247,Fresh,64,Spilled,43
+98,6.3,8646,Certified Fresh,81,Spilled,54
+100,6,8320,Rotten,50,Spilled,44
+106,8.5,2362,Certified Fresh,96,Upright,96
+92,7.8,1942,Certified Fresh,96,Upright,89
+115,6.6,110238,Rotten,43,Spilled,58
+87,4.4,21501,Rotten,12,Spilled,52
+103,8.1,14359,Fresh,100,Upright,90
+127,6.5,12450,Fresh,75,Spilled,55
+90,6.4,21704,Fresh,63,Spilled,52
+119,7.2,4375,Rotten,40,Upright,85
+135,6.2,48324,Rotten,40,Spilled,43
+91,5.5,4768,Rotten,13,Spilled,30
+101,5.9,2944,Rotten,24,Spilled,38
+93,6.8,6788,Fresh,79,Upright,75
+101,6.5,24783,Fresh,65,Spilled,55
+130,6,3745,Rotten,54,Spilled,39
+101,6.4,54726,Rotten,48,Spilled,59
+99,5.9,1493,Rotten,59,Spilled,47
+100,4.4,5616,Rotten,21,Spilled,24
+106,7.6,10492,Fresh,96,Upright,87
+116,7.3,4451,Fresh,60,Upright,83
+90,6.8,12269,Fresh,71,Upright,81
+117,5.7,60335,Rotten,32,Spilled,35
+83,5.5,5035,Rotten,29,Spilled,34
+140,8.2,315051,Certified Fresh,82,Upright,92
+106,5.9,82737,Rotten,42,Spilled,55
+94,6.1,4944,Fresh,70,Spilled,54
+91,3.6,8229,Rotten,17,Spilled,14
+108,6.8,4516,Fresh,92,Upright,76
+100,5.7,7858,Rotten,9,Spilled,40
+126,7.4,10938,Certified Fresh,84,Upright,82
+107,7.8,279704,Certified Fresh,78,Upright,87
+94,5.8,11192,Fresh,78,Spilled,41
+94,6.2,3851,Rotten,40,Upright,75
+97,5.8,1838,Fresh,71,Spilled,43
+109,6.2,6552,Rotten,50,Spilled,52
+104,5.7,390,Rotten,29,Spilled,25
+117,7.2,68429,Fresh,62,Upright,74
+93,8.1,182983,Certified Fresh,98,Upright,93
+132,8,1147,Fresh,95,Upright,90
+95,7.2,35635,Certified Fresh,93,Upright,80
+102,5.9,2569,Rotten,40,Spilled,34
+101,5.9,13980,Fresh,68,Spilled,37
+105,7.7,11477,Fresh,86,Upright,86
+84,4.1,9853,Rotten,9,Spilled,33
+102,6.4,14970,Rotten,39,Spilled,45
+90,7.3,9001,Fresh,92,Upright,81
+122,6.2,35868,Rotten,22,Spilled,48
+107,5.4,41767,Rotten,21,Spilled,24
+97,3.8,6954,Rotten,17,Spilled,35
+165,8.5,893008,Certified Fresh,88,Upright,91
+109,6.2,3467,Rotten,50,Upright,69
+126,7,117688,Fresh,66,Upright,75
+89,5.1,2817,Rotten,17,Spilled,43
+102,5.8,32751,Rotten,14,Spilled,35
+123,6.3,5704,Rotten,19,Upright,78
+96,7.6,318,Fresh,97,Upright,78
+127,6.6,123989,Rotten,52,Upright,64
+103,5.6,70209,Rotten,38,Spilled,40
+111,7.8,541,Fresh,86,Upright,88
+120,6.1,132215,Rotten,48,Spilled,43
+86,6.7,127458,Fresh,67,Upright,65
+99,3.5,27769,Rotten,35,Spilled,46
+101,5.8,52635,Rotten,14,Spilled,55
+121,7.1,12819,Fresh,81,Upright,75
+91,3.5,6054,Rotten,4,Upright,67
+92,6.2,9367,Certified Fresh,84,Spilled,54
+95,6.2,17798,Rotten,32,Spilled,41
+93,6.7,26010,Fresh,69,Upright,75
+98,7.5,4515,Certified Fresh,79,Upright,76
+39,7.3,535,Fresh,100,Upright,74
+107,7.4,71572,Certified Fresh,79,Upright,87
+91,3.4,57933,Rotten,3,Spilled,37
+157,7.5,1784,Fresh,100,Upright,86
+118,7.2,3883,Fresh,70,Upright,79
+126,6.7,2282,Fresh,80,Spilled,42
+88,6.3,105745,Rotten,36,Upright,63
+94,5.3,104457,Fresh,66,Spilled,38
+92,5.6,205065,Rotten,37,Spilled,51
+100,7.8,562136,Certified Fresh,79,Upright,84
+91,5.7,1778,Rotten,50,Spilled,44
+92,5.6,7628,Rotten,15,Spilled,33
+100,7.1,17934,Fresh,60,Upright,74
+96,7.3,2502,Fresh,80,Upright,78
+155,6.7,13092,Fresh,67,Spilled,59
+90,6.6,1010,Fresh,100,Upright,74
+113,6.3,4687,Fresh,63,Spilled,55
+138,6.6,48137,Fresh,60,Spilled,52
+118,7.8,164112,Certified Fresh,89,Upright,89
+115,7.5,30921,Fresh,96,Upright,82
+127,3.8,37640,Rotten,4,Spilled,22
+117,6.8,95327,Certified Fresh,91,Upright,85
+123,6.5,289825,Certified Fresh,74,Upright,66
+102,6.5,15525,Certified Fresh,93,Upright,61
+99,4.2,43268,Rotten,3,Spilled,33
+100,6.3,3153,Rotten,33,Spilled,43
+123,6,1887,Rotten,55,Spilled,50
+86,4.5,3096,Rotten,4,Spilled,49
+97,7.4,112216,Fresh,63,Upright,84
+131,6.4,154674,Rotten,51,Upright,62
+126,6.7,12535,Fresh,79,Upright,63
+97,7.4,3363,Fresh,100,Upright,83
+114,6.3,40659,Rotten,53,Upright,65
+120,7.4,82378,Certified Fresh,91,Upright,74
+94,5.1,3135,Rotten,41,Upright,61
+90,7.3,1489,Certified Fresh,85,Upright,70
+125,6.8,41385,Rotten,59,Upright,62
+128,6.7,88523,Fresh,71,Upright,69
+91,6.6,12221,Fresh,75,Upright,63
+97,5.9,6304,Rotten,36,Spilled,39
+85,5.1,9565,Rotten,19,Spilled,32
+129,7.2,15913,Fresh,94,Upright,79
+101,8.1,414687,Certified Fresh,96,Upright,87
+107,7.2,33720,Fresh,67,Upright,70
+98,7.4,325,Rotten,53,Upright,71
+103,7.8,22245,Fresh,72,Upright,86
+106,5.7,17133,Rotten,52,Spilled,33
+108,6.7,23821,Certified Fresh,79,Upright,70
+123,7.7,13285,Fresh,85,Upright,87
+100,6.7,192052,Rotten,33,Upright,68
+110,6.9,211129,Rotten,54,Upright,83
+135,7.7,146518,Certified Fresh,78,Upright,85
+100,5.4,2239,Rotten,50,Spilled,39
+95,6,486,Rotten,31,Spilled,44
+92,4.1,7658,Rotten,4,Spilled,17
+107,6.1,1268,Rotten,11,Spilled,58
+118,2.4,64119,Rotten,3,Spilled,11
+95,6.2,24678,Rotten,55,Spilled,41
+105,7.6,6114,Fresh,100,Upright,85
+93,6.5,9399,Rotten,37,Spilled,49
+100,7.8,414650,Certified Fresh,92,Upright,79
+104,6.5,15291,Fresh,60,Spilled,54
+112,5.9,725,Rotten,33,Spilled,41
+123,7.1,93331,Rotten,40,Upright,77
+154,7.4,9876,Certified Fresh,89,Upright,79
+115,7.7,9525,Certified Fresh,84,Upright,85
+90,7.2,44741,Fresh,76,Upright,80
+74,7.3,285,Fresh,78,Upright,89
+105,5.8,3673,Fresh,67,Spilled,31
+95,6.1,79970,Rotten,38,Spilled,46
+84,8.1,1058,Fresh,79,Upright,92
+91,6.9,60220,Certified Fresh,72,Upright,62
+94,4.1,5591,Rotten,21,Spilled,36
+82,7.3,340,Fresh,100,Upright,80
+98,6.3,50340,Fresh,60,Spilled,57
+92,6,2934,Fresh,61,Spilled,55
+91,5.7,5564,Rotten,24,Spilled,55
+132,8.2,753592,Certified Fresh,73,Upright,90
+98,6.4,1141,Fresh,83,Upright,75
+126,6.2,3967,Fresh,67,Spilled,40
+110,7.1,287476,Fresh,63,Upright,71
+149,7.4,94983,Fresh,67,Upright,86
+119,7,56185,Fresh,90,Upright,73
+146,6.4,3138,Fresh,82,Upright,61
+125,6.4,25264,Rotten,55,Spilled,45
+103,4.1,9424,Rotten,29,Upright,70
+114,6.2,16681,Rotten,31,Spilled,56
+83,5.3,1308,Rotten,10,Spilled,56
+85,7.9,87215,Certified Fresh,97,Upright,91
+105,7.3,121245,Certified Fresh,83,Upright,81
+110,6.4,71112,Rotten,22,Spilled,46
+90,6.7,72295,Fresh,74,Upright,65
+90,3.8,2289,Rotten,22,Spilled,21
+124,6.4,84191,Rotten,59,Spilled,49
+112,6.6,235529,Rotten,51,Spilled,48
+115,8,168032,Certified Fresh,98,Upright,90
+104,5.4,56329,Rotten,44,Spilled,31
+90,7.6,2849,Certified Fresh,100,Upright,84
+120,6.8,26360,Rotten,35,Upright,77
+86,6.5,5762,Fresh,64,Spilled,48
+94,5.9,8521,Rotten,25,Spilled,45
+103,6.6,191935,Rotten,30,Spilled,58
+267,7.8,872,Fresh,100,Upright,73
+95,5.1,8999,Rotten,14,Spilled,27
+110,7.6,184656,Certified Fresh,84,Upright,85
+89,7.2,2098,Rotten,44,Upright,86
+143,7.7,375820,Certified Fresh,90,Upright,83
+92,4.8,19187,Rotten,11,Spilled,25
+90,6.4,1406,Fresh,60,Upright,61
+103,7,16755,Rotten,51,Upright,78
+108,5.6,9003,Fresh,64,Spilled,40
+110,6.3,5014,Fresh,75,Spilled,51
+97,6.1,2818,Rotten,56,Spilled,40
+94,7.9,38076,Certified Fresh,100,Upright,87
+89,6.7,137405,Fresh,64,Upright,66
+97,5.6,56361,Rotten,24,Spilled,52
+85,7,7244,Fresh,67,Upright,75
+110,5.7,2701,Rotten,23,Spilled,40
+97,4.8,18712,Rotten,7,Spilled,38
+106,6.3,25054,Rotten,43,Spilled,49
+84,3.8,1510,Rotten,10,Upright,63
+118,7.4,8544,Fresh,88,Upright,83
+103,7.3,8561,Rotten,56,Upright,81
+88,6.7,151934,Rotten,28,Upright,61
+91,7.1,52449,Certified Fresh,85,Upright,80
+128,5.9,11001,Rotten,32,Spilled,46
+100,6.5,42613,Fresh,63,Upright,64
+88,4.1,3505,Rotten,33,Spilled,19
+107,6.9,74294,Rotten,53,Upright,78
+86,7.5,1480,Fresh,75,Upright,80
+101,4.5,703,Rotten,17,Spilled,33
+111,6,103789,Rotten,51,Spilled,51
+106,7.5,42842,Certified Fresh,94,Upright,81
+95,6.8,26731,Rotten,58,Upright,65
+85,7.8,26628,Fresh,100,Upright,90
+92,7,149437,Fresh,60,Upright,85
+101,6.7,9291,Certified Fresh,76,Upright,71
+81,7.8,157701,Certified Fresh,93,Upright,90
+101,6.1,14901,Fresh,67,Spilled,50
+97,6.4,1361,Fresh,86,Spilled,51
+99,7.8,47065,Certified Fresh,80,Upright,87
+97,6.9,12606,Certified Fresh,85,Upright,69
+112,7.8,246587,Certified Fresh,93,Upright,87
+111,7.6,42208,Rotten,59,Upright,84
+108,7.6,9216,Rotten,31,Upright,86
+120,7,201787,Certified Fresh,85,Upright,71
+113,7.1,19000,Fresh,89,Upright,82
+92,7.5,1799,Fresh,61,Upright,72
+101,5.9,12877,Rotten,28,Spilled,59
+134,6.8,9025,Fresh,60,Upright,76
+77,5.7,5985,Rotten,36,Spilled,45
+74,6.7,30886,Rotten,43,Upright,63
+106,5.6,4970,Rotten,21,Spilled,29
+107,6.3,2732,Rotten,33,Upright,72
+87,5.1,3336,Rotten,44,Spilled,40
+116,7.2,252661,Certified Fresh,93,Upright,76
+91,7.4,30641,Certified Fresh,81,Upright,84
+83,7,22601,Certified Fresh,86,Upright,71
+106,6.1,7076,Fresh,76,Spilled,42
+110,7.2,161601,Certified Fresh,78,Upright,88
+113,7.6,285328,Certified Fresh,87,Upright,85
+110,7.3,2598,Fresh,100,Upright,75
+100,7.2,108598,Certified Fresh,94,Upright,76
+90,6.7,20655,Certified Fresh,83,Upright,66
+89,5.3,12322,Rotten,15,Spilled,55
+110,7.1,99192,Rotten,51,Upright,76
+93,5.6,44257,Rotten,28,Spilled,42
+115,6.7,77762,Rotten,22,Upright,74
+161,7.4,368799,Certified Fresh,82,Upright,79
+90,6.2,2830,Rotten,25,Upright,64
+104,6,2960,Rotten,21,Spilled,48
+86,5.2,46233,Rotten,24,Spilled,23
+111,6.5,9980,Rotten,25,Upright,61
+130,6.2,8016,Rotten,45,Upright,66
+88,5.6,37938,Rotten,11,Spilled,45
+108,6.5,16480,Rotten,52,Spilled,54
+94,6.3,63219,Certified Fresh,80,Spilled,49
+97,6.5,4251,Fresh,71,Spilled,59
+90,6.4,23697,Certified Fresh,89,Upright,60
+108,6.3,53675,Rotten,34,Spilled,48
+87,6.5,9787,Rotten,43,Spilled,58
+91,5.1,1978,Rotten,36,Spilled,28
+93,5.3,9370,Rotten,15,Spilled,31
+140,7.8,10380,Fresh,91,Upright,87
+105,6.9,73280,Rotten,42,Upright,68
+91,5.9,7656,Fresh,67,Spilled,47
+124,6.2,11855,Rotten,39,Spilled,37
+102,7.5,172765,Certified Fresh,88,Upright,83
+91,6.9,23201,Rotten,20,Upright,84
+135,6.4,8604,Rotten,48,Upright,74
+100,7,14949,Fresh,87,Upright,79
+112,6.1,1995,Fresh,73,Spilled,44
+119,6.9,15806,Rotten,14,Upright,84
+116,5.3,30694,Rotten,30,Spilled,27
+107,6.5,56888,Rotten,56,Spilled,51
+134,7,4821,Certified Fresh,78,Upright,64
+81,5.8,3145,Rotten,40,Spilled,41
+108,5.8,19115,Certified Fresh,74,Spilled,35
+102,7.2,70994,Rotten,46,Upright,78
+120,7,66233,Certified Fresh,92,Upright,72
+113,5.8,2295,Rotten,22,Upright,66
+91,5.5,2698,Rotten,13,Spilled,37
+96,7.4,34652,Fresh,71,Upright,82
+NA,7.5,739,Fresh,80,Upright,72
+86,6.6,64489,Rotten,59,Upright,63
+122,7.8,49985,Certified Fresh,87,Upright,89
+94,5.8,3649,Fresh,87,Spilled,56
+88,6.3,3359,Fresh,93,Upright,62
+105,6.5,10020,Rotten,31,Spilled,46
+129,6.5,78726,Rotten,46,Spilled,38
+90,8,246907,Certified Fresh,94,Upright,92
+109,7.8,49374,Certified Fresh,89,Upright,89
+108,7.4,40001,Fresh,92,Upright,82
+89,5.8,18670,Fresh,65,Spilled,41
+95,6.5,5149,Rotten,47,Upright,72
+108,7.1,35577,Certified Fresh,97,Upright,83
+94,7.9,38076,Certified Fresh,100,Upright,87
+86,2.3,87652,Rotten,2,Spilled,29
+105,6.2,17329,Fresh,63,Spilled,45
+112,5.9,16511,Rotten,31,Spilled,34
+100,7.2,5002,Certified Fresh,78,Upright,79
+202,9,749783,Certified Fresh,97,Upright,97
+92,7.4,10599,Fresh,95,Upright,84
+91,6.4,3101,Fresh,75,Upright,63
+109,5.7,4180,Rotten,18,Spilled,44
+116,7.7,9904,Fresh,85,Upright,68
+84,6.3,3428,Fresh,67,Upright,61
+180,8.2,2056,Certified Fresh,95,Upright,86
+134,6.2,100447,Rotten,51,Spilled,50
+108,6.8,37506,Certified Fresh,79,Upright,65
+98,6,109633,Fresh,60,Spilled,49
+118,7.3,21443,Fresh,80,Upright,83
+88,5.9,4031,Rotten,17,Spilled,57
+110,5.5,47692,Rotten,27,Spilled,40
+82,6.2,47343,Rotten,11,Upright,69
+104,5.2,24084,Rotten,38,Upright,63
+122,7.8,13215,Fresh,96,Upright,85
+122,7.2,105982,Fresh,68,Upright,79
+106,6.1,34461,Rotten,46,Spilled,57
+86,5.1,15714,Rotten,31,Spilled,53
+129,5.8,3358,Rotten,23,Upright,65
+172,7.5,275125,Fresh,66,Upright,66
+105,4.9,13280,Rotten,11,Spilled,35
+121,7.5,2551,Rotten,38,Upright,95
+92,4.6,5863,Rotten,27,Spilled,33
+87,1.9,73219,Rotten,1,Spilled,19
+95,3.1,8319,Rotten,7,Spilled,17
+116,7.9,265725,Certified Fresh,90,Upright,89
+110,7.5,3859,Fresh,72,Upright,86
+134,5.9,53535,Rotten,47,Spilled,55
+87,7.1,4907,Certified Fresh,91,Upright,72
+131,7.6,318019,Certified Fresh,98,Upright,84
+85,7.5,679,Fresh,93,Upright,82
+113,8.5,806911,Certified Fresh,92,Upright,94
+107,6.4,3342,Fresh,63,Spilled,55
+86,7.9,3649,Certified Fresh,94,Upright,88
+93,6.4,27417,Rotten,55,Upright,68
+90,7.5,1815,Fresh,71,Upright,89
+84,7.1,9939,Fresh,74,Upright,76
+101,6.2,4857,Rotten,17,Spilled,43
+111,6.9,1428,Fresh,73,Upright,62
+92,5.9,44248,Rotten,6,Spilled,36
+112,6.8,18141,Fresh,60,Upright,60
+146,8.1,303529,Certified Fresh,76,Upright,89
+100,7.1,86953,Fresh,69,Upright,74
+104,7.1,128361,Fresh,68,Upright,78
+107,6.7,297034,Certified Fresh,83,Upright,71
+96,7.6,4143,Fresh,100,Upright,82
+88,8.4,3128,Fresh,87,Upright,89
+93,8,36909,Fresh,98,Upright,91
+112,5.8,1816,Rotten,38,Spilled,44
+117,6.4,1043,Fresh,80,Spilled,56
+103,6.4,54829,Rotten,55,Spilled,45
+137,7,9725,Rotten,54,Upright,70
+137,8,490295,Certified Fresh,84,Upright,89
+95,5.2,7881,Rotten,11,Spilled,35
+108,4.9,5136,Rotten,5,Spilled,13
+83,3.5,10055,Rotten,18,Spilled,30
+91,6.5,2408,Rotten,36,Upright,68
+118,5.9,24472,Rotten,32,Spilled,49
+92,6.6,115026,Rotten,29,Upright,63
+95,7.8,651,Certified Fresh,91,Upright,81
+93,5.3,7710,Rotten,38,Spilled,47
+114,5.7,5425,Rotten,46,Spilled,51
+105,6.3,4550,Fresh,71,Spilled,50
+125,7,16262,Fresh,72,Upright,78
+83,8.4,1571,Fresh,90,Upright,93
+88,4.9,10271,Rotten,8,Spilled,35
+138,5.7,204042,Fresh,61,Spilled,29
+100,4.5,16824,Rotten,10,Spilled,31
+89,7.5,6061,Certified Fresh,84,Upright,85
+100,4.5,10651,Rotten,13,Spilled,31
+122,7.9,1346,Fresh,94,Upright,85
+96,5.8,1886,Fresh,85,Spilled,49
+139,6.5,4874,Rotten,31,Upright,69
+119,7,4121,Fresh,91,Upright,80
+107,6.8,40133,Certified Fresh,78,Upright,79
+85,6.2,3416,Rotten,7,Spilled,43
+91,5.5,73617,Rotten,14,Spilled,37
+124,7.7,183747,Certified Fresh,80,Upright,86
+88,6.3,123588,Fresh,67,Spilled,55
+119,6.3,124250,Certified Fresh,75,Spilled,52
+119,6.8,11103,Fresh,87,Upright,75
+105,5.9,33040,Rotten,43,Spilled,49
+131,7.1,11236,Fresh,75,Upright,74
+108,6.4,9946,Fresh,82,Spilled,58
+85,6,1680,Rotten,33,Upright,65
+130,7.1,122980,Certified Fresh,79,Upright,67
+117,5.4,19603,Rotten,40,Upright,60
+91,7.8,1663,Rotten,40,Upright,83
+125,6.8,71141,Rotten,45,Spilled,57
+85,5,13790,Rotten,25,Spilled,37
+107,5.3,5374,Rotten,21,Spilled,29
+110,7.2,14589,Fresh,91,Upright,78
+87,6.2,11259,Rotten,53,Upright,67
+155,7.3,6472,Fresh,90,Upright,76
+107,7,100416,Rotten,36,Spilled,49
+112,6.7,3866,Fresh,100,Spilled,51
+86,7.8,872,Fresh,96,Upright,92
+94,7.5,2928,Fresh,67,Upright,78
+81,7.9,3887,Fresh,82,Upright,87
+75,5.9,1607,Rotten,13,Upright,60
+111,5.8,4904,Rotten,51,Spilled,32
+96,6.8,19937,Certified Fresh,82,Upright,67
+93,5.7,17384,Rotten,32,Spilled,47
+93,6.1,25683,Rotten,33,Spilled,39
+89,4.8,3883,Rotten,17,Spilled,24
+122,7.9,99582,Certified Fresh,93,Upright,93
+83,3.4,2959,Rotten,11,Spilled,24
+133,6.7,134031,Rotten,41,Spilled,57
+91,4.8,17190,Rotten,11,Spilled,47
+112,7.4,135840,Certified Fresh,88,Upright,77
+115,5.7,2897,Rotten,15,Upright,72
+129,6.4,10126,Rotten,29,Upright,72
+104,6.3,19383,Rotten,57,Spilled,49
+128,7.4,8030,Rotten,4,Upright,78
+90,5.3,3461,Rotten,13,Spilled,29
+68,6.4,3970,Certified Fresh,79,Upright,70
+126,8.3,572236,Certified Fresh,97,Upright,94
+104,4.3,4072,Rotten,13,Spilled,14
+108,6.5,126257,Certified Fresh,75,Upright,70
+93,4.9,15491,Rotten,6,Spilled,30
+117,6.1,51070,Rotten,51,Spilled,35
+102,6.8,2530,Fresh,73,Upright,73
+93,5.3,30495,Rotten,16,Spilled,28
+97,5.6,16955,Rotten,29,Spilled,37
+130,8.5,797101,Certified Fresh,76,Upright,92
+97,5.9,8059,Rotten,27,Upright,76
+105,7.3,60483,Fresh,71,Upright,81
+95,6.2,3602,Fresh,60,Spilled,58
+103,6.8,34802,Rotten,18,Upright,72
+121,6.6,3730,Rotten,49,Upright,66
+85,3.4,30085,Rotten,10,Spilled,23
+82,6.3,32737,Rotten,25,Upright,70
+102,7.1,34307,Certified Fresh,92,Upright,81
+129,6,66171,Fresh,68,Upright,60
+144,6.3,8685,Rotten,43,Spilled,52
+177,5.9,54597,Rotten,9,Spilled,49
+97,5.3,7862,Rotten,7,Spilled,46
+103,6.6,68871,Certified Fresh,80,Upright,79
+122,8.1,582091,Certified Fresh,93,Upright,86
+81,5.1,11156,Rotten,29,Upright,63
+100,8.2,6345,Fresh,92,Upright,88
+115,7.5,9990,Fresh,71,Upright,86
+92,5.9,3473,Fresh,60,Spilled,34
+93,6.3,42295,Rotten,25,Spilled,59
+126,7.6,329613,Fresh,71,Upright,87
+105,6.4,42408,Fresh,60,Spilled,50
+88,6.7,137222,Rotten,37,Upright,62
+95,5.5,51366,Rotten,25,Spilled,25
+120,7.5,21623,Fresh,63,Upright,82
+103,7.8,39320,Certified Fresh,93,Upright,85
+95,3.4,1915,Rotten,17,Spilled,26
+94,5.1,1674,Rotten,50,Spilled,38
+118,5.9,2096,Fresh,67,Spilled,45
+95,6.2,1935,Rotten,35,Upright,70
+110,7.8,10522,Fresh,91,Upright,86
+96,5.4,2380,Rotten,43,Spilled,28
+83,7.6,78862,Rotten,50,Upright,81
+96,4.3,83724,Rotten,17,Spilled,32
+115,7.1,34298,Fresh,71,Upright,77
+83,7.4,830,Fresh,100,Upright,72
+111,7.3,2869,Fresh,81,Upright,72
+94,5.9,134510,Fresh,61,Spilled,53
+99,6.5,152216,Rotten,26,Upright,60
+97,6.3,54771,Rotten,40,Spilled,49
+112,5.8,11838,Rotten,13,Spilled,36
+107,7.1,110540,Rotten,38,Spilled,59
+100,5.7,6343,Fresh,67,Spilled,49
+135,7.7,309494,Fresh,63,Upright,73
+98,6.5,6909,Fresh,72,Spilled,59
+88,6,1890,Fresh,67,Spilled,49
+121,6.8,72176,Fresh,66,Upright,65
+109,7.1,2271,Rotten,52,Upright,64
+99,6.6,6804,Fresh,79,Upright,68
+115,6.8,161101,Rotten,53,Upright,64
+110,5.2,10535,Rotten,13,Spilled,19
+94,8.2,448434,Certified Fresh,89,Upright,93
+104,6.9,2931,Fresh,83,Upright,76
+97,7,21009,Fresh,63,Upright,77
+87,5.4,6811,Rotten,35,Spilled,31
+89,6.9,1943,Certified Fresh,81,Upright,72
+99,7.5,32338,Certified Fresh,95,Upright,78
+93,5.7,19161,Rotten,17,Spilled,44
+98,6.5,54871,Fresh,61,Spilled,52
+87,6,2433,Fresh,86,Spilled,44
+115,6.8,21924,Rotten,33,Upright,73
+95,7.6,128298,Certified Fresh,98,Upright,85
+99,5.1,14559,Rotten,27,Spilled,46
+116,7.3,34926,Rotten,49,Upright,77
+101,7.3,27097,Certified Fresh,85,Upright,80
+120,6.8,4021,Certified Fresh,88,Upright,71
+78,8,764,Fresh,100,Upright,91
+128,5.8,6418,Rotten,50,Spilled,42
+108,5.9,70737,Rotten,27,Upright,61
+84,4.5,9656,Rotten,4,Spilled,37
+107,6.6,193702,Rotten,28,Upright,67
+89,6,59076,Rotten,19,Upright,65
+127,6.4,154148,Rotten,54,Spilled,54
+99,7.1,11377,Fresh,87,Upright,76
+90,4.2,3302,Rotten,17,Spilled,15
+90,7.8,180,Fresh,84,Upright,79
+102,6.4,34253,Fresh,68,Spilled,49
+84,7.6,17960,Fresh,77,Upright,86
+139,7.5,281,Fresh,92,Upright,77
+126,6.7,12498,Fresh,75,Upright,67
+93,7.6,86831,Certified Fresh,94,Upright,87
+110,6.2,83424,Rotten,14,Spilled,44
+114,6.3,1803,Fresh,67,Upright,65
+90,7.7,56919,Rotten,55,Upright,78
+106,7.5,10250,Certified Fresh,97,Upright,87
+118,4.9,18005,Rotten,12,Spilled,22
+98,5.9,62773,Rotten,40,Spilled,35
+94,7.2,15444,Certified Fresh,98,Upright,80
+99,7,48756,Fresh,83,Upright,79
+89,5.6,14986,Rotten,19,Spilled,32
+86,4.7,13525,Rotten,8,Spilled,44
+127,7.1,246343,Fresh,60,Upright,73
+110,6.7,290958,Certified Fresh,72,Upright,69
+123,7.1,3146,Fresh,89,Upright,71
+100,5.5,10886,Rotten,25,Spilled,39
+94,7.2,96471,Rotten,55,Upright,82
+106,5.9,17101,Rotten,20,Spilled,46
+40,7,723,Fresh,100,Upright,68
+152,7.7,106171,Certified Fresh,81,Upright,87
+136,7.2,88777,Fresh,65,Upright,85
+122,7.7,294683,Fresh,72,Upright,89
+118,6.8,51534,Certified Fresh,88,Upright,71
+112,6.9,3487,Certified Fresh,77,Upright,62
+128,7.1,5115,Fresh,88,Upright,68
+92,6.9,15449,Fresh,97,Upright,80
+106,5.7,2181,Fresh,75,Spilled,34
+132,6.2,9832,Fresh,77,Upright,81
+124,7.2,247105,Rotten,48,Upright,80
+119,8,13614,Certified Fresh,95,Upright,89
+96,6.2,78297,Rotten,42,Upright,72
+95,7.6,4369,Fresh,89,Upright,86
+107,4.9,6765,Rotten,31,Spilled,29
+122,6.6,16137,Fresh,83,Spilled,59
+109,7.3,101850,Certified Fresh,82,Upright,81
+107,7.1,504,Certified Fresh,86,Upright,71
+94,7.4,1935,Fresh,100,Upright,94
+109,6.4,15116,Fresh,82,Spilled,54
+139,7.3,183717,Certified Fresh,85,Upright,79
+104,7.5,64873,Rotten,59,Upright,82
+109,7.7,20738,Fresh,92,Upright,87
+81,7.6,123769,Fresh,72,Upright,87
+127,7,79866,Fresh,67,Upright,71
+83,7.6,160237,Certified Fresh,92,Upright,88
+94,6.3,24595,Rotten,49,Spilled,50
+112,7,16883,Certified Fresh,89,Upright,70
+93,8.4,390,Fresh,95,Upright,92
+91,6.9,19539,Rotten,42,Upright,70
+116,5.7,48718,Rotten,53,Spilled,38
+89,6.1,26301,Rotten,49,Spilled,44
+124,7,26943,Rotten,56,Upright,80
+94,6.7,4077,Rotten,40,Upright,66
+103,6.2,63511,Rotten,22,Spilled,55
+80,7.5,27601,Certified Fresh,90,Upright,79
+194,7.7,756602,Certified Fresh,88,Upright,69
+94,7.8,3998,Certified Fresh,93,Upright,91
+112,6,19898,Rotten,46,Spilled,38
+107,6.9,10786,Fresh,68,Upright,67
+97,6.9,2857,Fresh,71,Spilled,58
+89,7.8,9675,Certified Fresh,88,Upright,89
+91,7.6,7545,Certified Fresh,87,Upright,88
+82,4.5,2113,Rotten,9,Spilled,52
+90,7.5,3448,Fresh,100,Upright,89
+100,6,2441,Rotten,46,Spilled,55
+108,6.2,12402,Fresh,63,Spilled,53
+90,5.7,3373,Rotten,25,Upright,65
+96,4.9,6322,Rotten,14,Spilled,33
+91,7.3,9906,Fresh,63,Upright,74
+113,7.2,15025,Certified Fresh,91,Upright,78
+95,7.1,30826,Fresh,77,Upright,73
+134,7.9,309896,Certified Fresh,93,Upright,89
+104,5.4,7284,Rotten,7,Spilled,35
+121,6.7,58907,Fresh,67,Upright,70
+112,5.6,57251,Rotten,11,Spilled,48
+85,2.8,3790,Rotten,8,Spilled,18
+119,5.7,8818,Rotten,26,Spilled,41
+99,4.3,11125,Rotten,6,Spilled,22
+142,7.3,675907,Certified Fresh,84,Upright,81
+95,4.9,2120,Rotten,40,Spilled,35
+99,6.8,111132,Rotten,35,Upright,73
+133,8.1,103378,Certified Fresh,94,Upright,95
+100,6.1,13682,Rotten,17,Spilled,37
+99,5.9,63672,Rotten,19,Spilled,40
+112,7.1,6946,Fresh,85,Upright,72
+136,6.4,3584,Rotten,38,Spilled,55
+92,5.3,54363,Rotten,27,Upright,65
+103,7.7,11197,Certified Fresh,95,Upright,81
+114,7.4,96787,Certified Fresh,90,Upright,81
+88,6.8,16366,Fresh,77,Upright,73
+88,7.2,134270,Certified Fresh,88,Upright,74
+116,5.2,11657,Rotten,36,Spilled,35
+97,5.9,8345,Rotten,44,Spilled,26
+82,6.7,46794,Rotten,29,Upright,81
+87,5.9,10087,Fresh,80,Spilled,52
+120,5.8,66054,Rotten,31,Spilled,34
+97,4.2,43574,Rotten,17,Spilled,51

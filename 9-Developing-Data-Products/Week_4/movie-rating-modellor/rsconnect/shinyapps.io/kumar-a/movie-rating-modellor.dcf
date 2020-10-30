@@ -1,0 +1,12 @@
+name: movie-rating-modellor
+title: movie-rating-modellor
+username:
+account: kumar-a
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3128028
+bundleId: 3799653
+url: https://kumar-a.shinyapps.io/movie-rating-modellor/
+when: 1604041019.109
+asMultiple: FALSE
+asStatic: FALSE

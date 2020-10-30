@@ -1,0 +1,144 @@
+
+Reproducible Pitch Presentation
+========================================================
+author: Abhishek Kumar
+date: 29 October 2020
+class: title-slide
+width: 1440
+height: 900
+autosize: true
+transition: linear
+
+*** 
+
+<img src="reproducible-pitch-presentation-figure/logo.png" height=400px width =400px style="position:absolute;top:0px;right:0px;background-color:transparent;border:0px; box-shadow:none;"/>
+
+
+About the dataset
+========================================================
+autosize: true
+
+```{r}
+movies <- read.csv("movies.csv")
+head(movies)
+```
+
+
+About the App
+========================================================
+autosize: true
+
+The [Movie Rating Modellor App](http://kumar-a.shinyapps.io/movie-rating-modellor), 
+is a simple app that uses movies data from [IMDb](https://www.imdb.com/) and 
+[Rotten Tomatoes](https://www.rottentomatoes.com/).
+
+- **How to use this App?**
+      + Select your Response and Predictor variable
+      + Check Smooth If you want to fit a linear smooth line
+      + Select color to visualise the distribution among the varible
+      + Analyse the scatterplot and linear regression model
+
+
+***
+
+<img src="reproducible-pitch-presentation-figure/app.png" style="position:absolute;top:0px;right:0px;background-color:transparent;
+border:0px;box-shadow:none;"/>
+
+ui.R
+========================================================
+autosize: true
+
+<font size = "5.5">
+```{r echo=TRUE}
+library(shiny)
+ui <- fluidPage(
+      titlePanel("Movies Rating Modeller"),
+      sidebarLayout(
+            sidebarPanel(
+                  selectInput(inputId = "outcome", label = h3("Response"), 
+                              choices = list("IMDB Rating" = "imdb_rating",
+                                             "Critics Score" = "critics_score",
+                                             "Audience Score" = "audience_score"), 
+                              selected = 1),
+                  selectInput(inputId = "indepvar", label = h3("Predictor"), 
+                              choices = list("Runtime" = "runtime", 
+                                             "IMDB Rating" = "imdb_rating",
+                                             "IMDB Votes" = "imdb_num_votes",
+                                             "Critics Score" = "critics_score",
+                                             "Audience Score" = "audience_score"), 
+                              selected = 1),
+                  checkboxInput(inputId = "smooth", label = "Smooth"),
+                  selectInput(inputId = "color", label = h3("Color"), 
+                              choices = list("None" = "None", 
+                                             "Critics Rating" = "critics_rating",
+                                             "Audience Rating" = "audience_rating"), 
+                              selected = 1)),
+            mainPanel(
+                  h4("How to use this App?"),
+                  p("1. Select your Response and Predictor variable"),
+                  p("2. Check Smooth If you want to fit a linear smooth line"),
+                  p("3. Select color to visualise the distribution among the varible"),
+                  p("4. Analyse the scatterplot and linear regression model"), br(),
+                  tabsetPanel(type = "tabs",
+                              tabPanel("Scatterplot", plotOutput("scatterplot")),
+                              tabPanel("Model Summary", verbatimTextOutput("summary")),
+                              tabPanel("Model Accuracy", DT::dataTableOutput('tbl')),
+                              tabPanel("Model Diagnostics", plotOutput("residualplot"))
+                  )
+            )
+      ))
+```
+</font>
+
+
+server.R
+========================================================
+autosize: true
+
+
+<font size = "5.5">
+```{r}
+library(ggplot2)
+server <- function(input, output) {
+      movies <- na.omit(read.csv("movies.csv"))
+      output$summary <- renderPrint({
+            fit <- lm(movies[,input$outcome] ~ movies[,input$indepvar])
+            names(fit$coefficients) <- c("Intercept", input$indepvar)
+            summary(fit)
+      })
+      output$tbl = DT::renderDataTable({
+            fit <- lm(movies[,input$outcome] ~ movies[,input$indepvar])
+            adjr2 <- round(summary(fit)$adj.r.squared, 3)
+            pred.fit <- predict(fit, movies)
+            resid.fit <- movies[,input$outcome] - pred.fit
+            rmse.fit <- sqrt(mean(resid.fit^2))
+            pearsonr <- cor(movies[,input$outcome], movies[,input$indepvar])
+            DT::datatable(data = data.frame("Adj_R_Sq" = adjr2,
+                                            "RMSE" = round(rmse.fit, 3),
+                                            "AIC" = round(AIC(fit), 3),
+                                            "Pearson_R" = round(pearsonr, 3)), 
+                          options = list(lengthChange = FALSE))
+      })
+      output$scatterplot <- renderPlot({
+            p <- ggplot(movies, aes_string(x = input$indepvar, y = input$outcome)) + 
+                  geom_point(shape = 21, size = 5, alpha = 0.5) +
+                  theme_bw() +
+                  theme(axis.title = element_text(size = 16, face = "bold"), 
+                        axis.text = element_text(size = 14), legend.position = "bottom",
+                        legend.text = element_text(size = 16), 
+                        legend.title = element_text(size = 18, face = "italic"),
+                        strip.text = element_text(size = 16))
+            if (input$smooth)
+                  p <- p + geom_smooth(method = "lm", size = 1.2, alpha = 0.2)
+            if (input$color != 'None')
+                  p <- p + aes_string(fill = input$color)
+            print(p)
+      }, height=400)
+      output$residualplot <- renderPlot({
+            fit <- lm(movies[,input$outcome] ~ movies[,input$indepvar])
+            par(mfrow = c(2,2))
+            plot(fit, which = 1:4)
+      }, height=400)
+}
+```
+</font>
